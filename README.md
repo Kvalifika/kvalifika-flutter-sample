@@ -12,6 +12,7 @@ Table of content:
 - [UI Customizations](#ui-customizations)
 	- [Appearance](#appearance)
 	- [Language](#language)
+- [ProGuard (Android)](#proguard)
 
 
 &nbsp;
