@@ -261,3 +261,10 @@ KvalifikaSdk(
   locale: KvalifikaSdkLocale.EN
 )
 ```
+
+&nbsp;
+### ProGuard (Android)
+If you are using ProGuard in Android release build add following options to ProGuard file:
+```
+-keep class com.facetec.sdk.** { *; }
+```
