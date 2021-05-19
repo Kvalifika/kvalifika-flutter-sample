@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  kvalifika_sdk: ^0.3.0
+  kvalifika_sdk: ^0.4.0
 
 
   # The following adds the Cupertino Icons font to your application.

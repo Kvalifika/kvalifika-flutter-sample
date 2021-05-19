@@ -21,7 +21,7 @@ Table of content:
 Add dependency to pubspec.yaml file
 ```yaml
 dependencies:
-  kvalifika_sdk: ^0.3.0
+  kvalifika_sdk: ^0.4.0
 ```
 
 ## Initialize the SDK
