@@ -3,25 +3,27 @@
 Use Kvalifika SDK to easily integrate into your Flutter app
 
 Table of content:
+
 - [Installation](#installation)
 - [Initialize the SDK](#initialize-the-sdk)
 - [Start Verification](#start-verification)
 - [Handling Verifications](#handling-verifications)
-	- [Callback Methods](#callback-methods)
-	- [Error Codes](#error-codes)
+  - [Callback Methods](#callback-methods)
+  - [Error Codes](#error-codes)
 - [UI Customizations](#ui-customizations)
-	- [Appearance](#appearance)
-	- [Language](#language)
+  - [Appearance](#appearance)
+  - [Language](#language)
 - [ProGuard (Android)](#proguard-android)
 
-
 &nbsp;
+
 ## Installation
 
 Add dependency to pubspec.yaml file
+
 ```yaml
 dependencies:
-  kvalifika_sdk: ^0.4.0
+  kvalifika_sdk: ^0.5.0
 ```
 
 ## Initialize the SDK
@@ -68,9 +70,11 @@ class _MyAppState extends State<MyApp> {
   }
 }
 ```
+
 &nbsp;
 
 ## Start Verification
+
 Call `sdk.startSession()` on button press
 
 ```dart
@@ -112,18 +116,21 @@ class _MyAppState extends State<MyApp> {
 ```
 
 &nbsp;
+
 ## Handling Verifications
+
 It's useful to know if a user has completed the verification flow or canceled it. For this, you can implement the callback methods.
 
 &nbsp;
+
 ### Callback Methods
 
-| Method | Description |
-|---------------------|--------------------------|
-| onInitialize        | This callback method is triggered when SDK initializes. |
-| onStart            | This callback method is triggered when user starts verification. |
-| onFinish             | This callback method is triggered when user completes verification. Get session data here. |
-| onError             | This callback method is triggered on error. [Error Codes](#error-codes). |
+| Method       | Description                                                                                |
+| ------------ | ------------------------------------------------------------------------------------------ |
+| onInitialize | This callback method is triggered when SDK initializes.                                    |
+| onStart      | This callback method is triggered when user starts verification.                           |
+| onFinish     | This callback method is triggered when user completes verification. Get session data here. |
+| onError      | This callback method is triggered on error. [Error Codes](#error-codes).                   |
 
 ```dart
 KvalifikaSdk(
@@ -132,18 +139,18 @@ KvalifikaSdk(
 
   },
   onStart: (sessionId) {
-    
+
   },
   onFinish: (sessionId) {
     // Fetch session data from your backend server here
   },
   onError: (error, message) {
     if (error == KvalifikaSdkError.INVALID_APP_ID) {
-      
+
     }
 
     if (error == KvalifikaSdkError.USER_CANCELLED) {
-      
+
     }
 
     if (error == KvalifikaSdkError.TIMEOUT) {
@@ -155,11 +162,11 @@ KvalifikaSdk(
     }
 
     if (error == KvalifikaSdkError.SESSION_UNSUCCESSFUL) {
-      
+
     }
 
     if (error == KvalifikaSdkError.ID_UNSUCCESSFUL) {
-      
+
     }
 
     if (error == KvalifikaSdkError.CAMERA_PERMISSION_DENIED) {
@@ -171,7 +178,7 @@ KvalifikaSdk(
     }
 
     if (error == KvalifikaSdkError.REVERSE_PORTRAIT_NOT_ALLOWED) {
-      
+
     }
 
     if (error == KvalifikaSdkError.FACE_IMAGES_UPLOAD_FAILED) {
@@ -202,27 +209,30 @@ KvalifikaSdk(
 ```
 
 &nbsp;
-### Error Codes
-| Error Code | Description |
-|---------------------|--------------------------|
-| INVALID_APP_ID        | Kvalifika App Id is incorrect |
-| USER_CANCELLED        | User cancelled before completing verification. |
-| TIMEOUT        | Cancelled due to inactivity. |
-| SESSION_UNSUCCESSFUL        | The Session was not performed successfully. |
-| ID_UNSUCCESSFUL        | The ID Scan was not performed successfully and identity document data was not generated. |
-| CAMERA_PERMISSION_DENIED        | Camera is required but access prevented by user settings. |
-| LANDSCAPE_MODE_NOT_ALLOWED        | Verification cancelled because device is in landscape mode. |
-| REVERSE_PORTRAIT_NOT_ALLOWED        | Verification cancelled because device is in reverse portrait mode. |
-| FACE_IMAGES_UPLOAD_FAILED        | Could not upload face images. Internal request failed. |
-| DOCUMENT_IMAGES_UPLOAD_FAILED        | Could not upload ID card or passport images. Internal request failed. |
-| COMPARE_IMAGES_FAILED        | Could not compare images. Internal request failed. |
-| UNKNOWN_INTERNAL_ERROR        | Session failed because of an unhandled internal error. This error comes with message.  |
 
+### Error Codes
+
+| Error Code                    | Description                                                                              |
+| ----------------------------- | ---------------------------------------------------------------------------------------- |
+| INVALID_APP_ID                | Kvalifika App Id is incorrect                                                            |
+| USER_CANCELLED                | User cancelled before completing verification.                                           |
+| TIMEOUT                       | Cancelled due to inactivity.                                                             |
+| SESSION_UNSUCCESSFUL          | The Session was not performed successfully.                                              |
+| ID_UNSUCCESSFUL               | The ID Scan was not performed successfully and identity document data was not generated. |
+| CAMERA_PERMISSION_DENIED      | Camera is required but access prevented by user settings.                                |
+| LANDSCAPE_MODE_NOT_ALLOWED    | Verification cancelled because device is in landscape mode.                              |
+| REVERSE_PORTRAIT_NOT_ALLOWED  | Verification cancelled because device is in reverse portrait mode.                       |
+| FACE_IMAGES_UPLOAD_FAILED     | Could not upload face images. Internal request failed.                                   |
+| DOCUMENT_IMAGES_UPLOAD_FAILED | Could not upload ID card or passport images. Internal request failed.                    |
+| COMPARE_IMAGES_FAILED         | Could not compare images. Internal request failed.                                       |
+| UNKNOWN_INTERNAL_ERROR        | Session failed because of an unhandled internal error. This error comes with message.    |
 
 &nbsp;
+
 ## UI Customizations
 
 ### Appearance
+
 You can customize logo and icons.
 **Add image in Android drawable resources folder (res/drawable folder) and reference it with filename**
 
@@ -246,15 +256,16 @@ KvalifikaSdk(
 ```
 
 &nbsp;
+
 ### Language
+
 You can set locale when initializing SDK
 Supported locales are:
 
 | Code | Language |
-|---------------------|--------------------------|
-| EN        | English |
-| GE        | Georgian |
-
+| ---- | -------- |
+| EN   | English  |
+| GE   | Georgian |
 
 ```dart
 KvalifikaSdk(
@@ -264,8 +275,11 @@ KvalifikaSdk(
 ```
 
 &nbsp;
+
 ### ProGuard (Android)
+
 If you are using ProGuard in Android release build add following options to ProGuard file:
+
 ```
 -keep class com.facetec.sdk.** { *; }
 ```
