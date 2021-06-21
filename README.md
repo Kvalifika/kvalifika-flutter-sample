@@ -5,7 +5,7 @@ Use Kvalifika SDK to easily integrate into your Flutter app
 Table of content:
 
 - [Installation](#installation)
-  - [iOS Specific Steps](#ios-specific-methods)
+  - [iOS Specific Steps](#ios-specific-steps)
 - [Initialize the SDK](#initialize-the-sdk)
 - [Start Verification](#start-verification)
 - [Handling Verifications](#handling-verifications)
