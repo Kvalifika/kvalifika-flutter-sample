@@ -24,7 +24,7 @@ Add dependency to pubspec.yaml file
 
 ```yaml
 dependencies:
-  kvalifika_sdk: ^0.7.0
+  kvalifika_sdk: ^0.8.0
 ```
 
 &nbsp;
