@@ -6,6 +6,7 @@ Table of content:
 
 - [Installation](#installation)
   - [iOS Specific Steps](#ios-specific-steps)
+  - [Android Specific Steps](#android-specific-steps)
 - [Initialize the SDK](#initialize-the-sdk)
 - [Start Verification](#start-verification)
 - [Handling Verifications](#handling-verifications)
@@ -60,6 +61,22 @@ Please add the following permissions to your app's Info.plist, so that the Kvali
 ```
 
 &nbsp;
+
+### Android Specific Steps
+
+Open `android/build.gradle` file and set `minSdkVersion` to `21`
+
+```groovy
+android {
+    ...
+    defaultConfig {
+        ...
+        minSdkVersion 21
+        ...
+  }
+  ...
+}
+```
 
 ## Initialize the SDK
 
