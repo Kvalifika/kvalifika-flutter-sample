@@ -28,7 +28,11 @@ class _MyAppState extends State<MyApp> {
           onInitialize: () {},
           onStart: (sessionId) {},
           onFinish: (sessionId) {},
-          onError: (error, message) {},
+          onError: (error, message) {
+		if(error == KvalifikaSdkError.INVALID_APP_ID) {
+		  print("invalid app id, please provide app id");
+		}
+	  },
           locale: KvalifikaSdkLocale.EN,
           builder: (sdk) => Center(
             child: ElevatedButton(

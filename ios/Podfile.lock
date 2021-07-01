@@ -1,11 +1,11 @@
 PODS:
   - FaceTecSDK (9.0.4)
   - Flutter (1.0.0)
-  - Kvalifika (0.1.0):
+  - Kvalifika (0.2.0):
     - FaceTecSDK (= 9.0.4)
-  - kvalifika_sdk (0.0.1):
+  - kvalifika_sdk (0.9.0):
     - Flutter
-    - Kvalifika
+    - Kvalifika (= 0.2.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -26,8 +26,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FaceTecSDK: c71e5db76bd6cc1f6065dbc32f933995b26ec6d7
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  Kvalifika: f26011e05970896112fa4bdbcab94ead70bda201
-  kvalifika_sdk: 55375e2cc946f58a1c8ffb73ce8910797e8ce15b
+  Kvalifika: c0296af0b33a5edc9352adeb4961b11a63176717
+  kvalifika_sdk: 85302d100310601078b2696fd90674f6665edd61
 
 PODFILE CHECKSUM: 5f7d7bcf446dc979e627cc48035377aa402169ec
 
