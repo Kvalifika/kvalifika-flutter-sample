@@ -108,7 +108,7 @@ class _MyAppState extends State<MyApp> {
         body: KvalifikaSdk(
           appId: "YOUR APP ID",
           locale: KvalifikaSdkLocale.EN,
-          builder: (sdk) => Center(
+          builder: (context, sdk) => Center(
             child: ElevatedButton(
               onPressed: () {
                 sdk.startSession();
@@ -151,7 +151,7 @@ class _MyAppState extends State<MyApp> {
         body: KvalifikaSdk(
           appId: "YOUR APP ID",
           locale: KvalifikaSdkLocale.EN,
-          builder: (sdk) => Center(
+          builder: (context, sdk) => Center(
             child: ElevatedButton(
               onPressed: () {
                 // Start session on button press
@@ -249,7 +249,7 @@ KvalifikaSdk(
 
     }
   },
-  builder: (sdk) => Center(
+  builder: (context, sdk) => Center(
     child: ElevatedButton(
       onPressed: () {
         sdk.startSession();
@@ -296,7 +296,7 @@ KvalifikaSdk(
   cancelIcon: "cancel_icon",
   activeFlashIcon: "active_flash_icon",
   inactiveFlashIcon: "inactive_flash_icon",
-  builder: (sdk) => Center(
+  builder: (context, sdk) => Center(
     child: ElevatedButton(
       onPressed: () {
         sdk.startSession();
