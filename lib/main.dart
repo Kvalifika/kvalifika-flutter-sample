@@ -25,10 +25,10 @@ class _MyAppState extends State<MyApp> {
         ),
         body: KvalifikaSdk(
           appId: "YOUR APP ID",
-          onInitialize: () {},
-          onStart: (sessionId) {},
-          onFinish: (sessionId) {},
-          onError: (error, message) {
+          onInitialize: (context) {},
+          onStart: (context, sessionId) {},
+          onFinish: (context, sessionId) {},
+          onError: (context, error, message) {
             if (error == KvalifikaSdkError.INVALID_APP_ID) {
               print("invalid app id, please provide app id");
             }
