@@ -187,16 +187,16 @@ It's useful to know if a user has completed the verification flow or canceled it
 ```dart
 KvalifikaSdk(
   appId: "YOUR APP ID",
-  onInitialize: () {
+  onInitialize: (context) {
 
   },
-  onStart: (sessionId) {
+  onStart: (context, sessionId) {
 
   },
-  onFinish: (sessionId) {
+  onFinish: (context, sessionId) {
     // Fetch session data from your backend server here
   },
-  onError: (error, message) {
+  onError: (context, error, message) {
     if (error == KvalifikaSdkError.INVALID_APP_ID) {
 
     }
