@@ -25,7 +25,9 @@ class _MyAppState extends State<MyApp> {
         ),
         body: KvalifikaSdk(
           appId: "YOUR APP ID",
-          onInitialize: (context) {},
+          onInitialize: (context, sdk) {
+            sdk.startSession();
+          },
           onStart: (context, sessionId) {},
           onFinish: (context, sessionId) {},
           onError: (context, error, message) {

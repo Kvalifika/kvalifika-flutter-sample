@@ -25,7 +25,7 @@ Add dependency to pubspec.yaml file
 
 ```yaml
 dependencies:
-  kvalifika_sdk: ^0.11.0
+  kvalifika_sdk: ^0.12.0
 ```
 
 &nbsp;
@@ -187,8 +187,9 @@ It's useful to know if a user has completed the verification flow or canceled it
 ```dart
 KvalifikaSdk(
   appId: "YOUR APP ID",
-  onInitialize: (context) {
-
+  onInitialize: (context, sdk) {
+    // Start session after initialization
+    sdk.startSession();
   },
   onStart: (context, sessionId) {
 
@@ -241,10 +242,6 @@ KvalifikaSdk(
 
     }
 
-    if (error == KvalifikaSdkError.COMPARE_IMAGES_FAILED) {
-
-    }
-
     if (error == KvalifikaSdkError.UNKNOWN_INTERNAL_ERROR) {
 
     }
@@ -276,7 +273,6 @@ KvalifikaSdk(
 | REVERSE_PORTRAIT_NOT_ALLOWED  | Verification cancelled because device is in reverse portrait mode.                       |
 | FACE_IMAGES_UPLOAD_FAILED     | Could not upload face images. Internal request failed.                                   |
 | DOCUMENT_IMAGES_UPLOAD_FAILED | Could not upload ID card or passport images. Internal request failed.                    |
-| COMPARE_IMAGES_FAILED         | Could not compare images. Internal request failed.                                       |
 | UNKNOWN_INTERNAL_ERROR        | Session failed because of an unhandled internal error. This error comes with message.    |
 
 &nbsp;
