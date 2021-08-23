@@ -15,6 +15,7 @@ Table of content:
 - [UI Customizations](#ui-customizations)
   - [Appearance](#appearance)
   - [Language](#language)
+- [Development Mode](#development-mode)
 - [ProGuard (Android)](#proguard-android)
 
 &nbsp;
@@ -25,7 +26,7 @@ Add dependency to pubspec.yaml file
 
 ```yaml
 dependencies:
-  kvalifika_sdk: ^0.12.0
+  kvalifika_sdk: ^0.12.1
 ```
 
 &nbsp;
@@ -319,6 +320,21 @@ Supported locales are:
 KvalifikaSdk(
   appId: "YOUR APP ID",
   locale: KvalifikaSdkLocale.EN
+)
+```
+
+&nbsp;
+
+### Development Mode
+Without specifying mode SDK uses [https://api.kvalifika.com](https://api.kvalifika.com)
+
+With development mode ON SDK uses [https://apistaging.kvalifika.com](https://apistaging.kvalifika.com)
+
+
+```dart
+KvalifikaSdk(
+  appId: "YOUR APP ID",
+  development: true
 )
 ```
 
